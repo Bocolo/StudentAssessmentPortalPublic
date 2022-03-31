@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="maven_db4"
+		transaction-type="RESOURCE_LOCAL">
+<!-- 		<provider>org.hibernate.ejb.HibernatePersistence</provider> -->
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<!-- 		 <provider>org.hibernate.ejb.HibernatePersistence</provider>  -->
+		<!-- <class>pl.michalmech.eventractor.domain.Country</class> -->
+		<class>com.mavenbro.web.model.Assignment</class>
+		<class>com.mavenbro.web.model.Course</class>
+		<class>com.mavenbro.web.model.HOD</class>
+		<class>com.mavenbro.web.model.Instructor</class>
+		<class>com.mavenbro.web.model.Quiz</class>
+		<class>com.mavenbro.web.model.Student</class>
+		<class>com.mavenbro.web.model.StudentCourse</class>
+		<class>com.mavenbro.web.model.StudentAssignment</class>
+		<class>com.mavenbro.web.model.StudentQuiz</class>
+		<class>com.mavenbro.web.model.User</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://localhost:3306/maven_db4?useSSL=false" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password"
+				value="EocharSQ!" />
+			<!-- <property name="javax.persistence.jdbc.dialect" value="MySQL5InnoDBDialect"/> -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+		</properties>
+	</persistence-unit>
+</persistence>
